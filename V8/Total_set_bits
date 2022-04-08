@@ -1,0 +1,61 @@
+/*WAP to find the number of set-bits in the 2 numbers in total*/
+
+#include <iostream>
+
+using namespace std;
+
+int
+setBitA (int a)
+{
+  int c = 0;
+  while (a != 0)
+    {
+      if (a & 1)
+	c++;
+      a = a >> 1;
+    }
+  return c;
+}
+
+int
+setBitB (int b)
+{
+  int c = 0;
+  while (b != 0)
+    {
+      if (b & 1)
+	c++;
+      b = b >> 1;
+    }
+  return c;
+}
+
+
+int
+main ()
+{
+  int a,b;
+  cout << "Enter a: ";
+  cin >> a;
+
+  cout << "Enter b: ";
+  cin >> b;
+
+  cout << "Number of set bits in 'a' is: " << setBitA (a) << endl;
+  cout << "Number of set bits in 'b' is: " << setBitB (b) << endl;
+  cout << "Total number of set-bits are:  " << setBitA (a)<<" + "<<setBitB(b)<<" = "<<setBitA(a)+setBitB(b)<<endl;
+
+    return 0;
+}
+
+
+
+/*OUTPUT
+
+Enter a: 5
+Enter b: 10
+Number of set bits in 'a' is: 2
+Number of set bits in 'b' is: 2
+Total number of setbits are:  2 + 2 = 4
+
+*/
