@@ -1,0 +1,51 @@
+/*WAP to find max and min in an array*/
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int cal_min(int arr[], int size)
+{
+    int minimum = INT_MAX;
+    for(int i=0;i<size;i++)
+    {
+        minimum = min(minimum, arr[i]);
+    }
+    return minimum;
+}
+
+int cal_max(int arr[], int size)
+{
+    int maximum = INT_MIN;
+    for(int i=0;i<size;i++)
+    {
+        maximum = max(maximum, arr[i]);
+    }
+    return maximum;
+}
+
+
+int main ()
+{
+    int n;
+    cout<<"Enter the size :";
+    cin>>n;
+    int arr[50];
+    cout<<"Enter elements : ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"Maximum : "<<cal_max(arr,n)<<endl;
+    cout<<"Minimum : "<<cal_min(arr,n)<<endl;
+   return 0;
+}
+
+
+
+/*OUTPUT
+
+Enter the size :6
+Enter elements : 12 8 0 -45 62 54
+Maximum : 62
+Minimum : -45
+*/
