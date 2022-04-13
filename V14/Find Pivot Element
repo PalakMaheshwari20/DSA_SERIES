@@ -1,0 +1,32 @@
+//Find the pivot element in the array which is the when drawn on graph are breakpoint of monotonic graph or the lowest element of the array
+
+#include <iostream>
+
+using namespace std;
+
+int pivotElement(int arr[], int n)
+{
+    int s = 0, e = n-1;
+    int mid = s + (e-s)/2;
+    while(s<e){
+        if(arr[mid]>=arr[0])
+        {
+            s = mid + 1;
+        }
+        else if(arr[mid]<arr[n-1]){
+                e = mid;
+            }
+        mid = s + (e-s)/2;
+    }
+    return s;
+}
+
+int main()
+{
+    int arr[] = {7,9,1,2,3,4};
+    int ar[] = {76,82,91,2};
+    int a[] = {12,14,15,67,8,9};
+    cout<<pivotElement(arr,6)<<endl;
+    cout<<pivotElement(ar,4)<<endl;
+    cout<<pivotElement(a,6)<<endl;
+}
